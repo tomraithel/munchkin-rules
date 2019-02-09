@@ -6,6 +6,7 @@ export const ButtonList = ({ buttons, onClick }) => {
     <>
       {buttons.map(({ text, action }) => (
         <Button
+          key={action}
           onClick={() => {
             onClick(action);
           }}
