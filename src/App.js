@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 
-import "./App.css";
 import { munchkinMachine } from "./state-machine";
 import { ButtonList } from "./ButtonList";
 import { screenByState } from "./screens";
+import { Headline } from "./Headline";
+import styled from "styled-components";
+
+export const AppContainer = styled.div`
+  display: flex;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: #282c34;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+`;
 
 class App extends Component {
   state = { munchkin: munchkinMachine.initialState };
@@ -22,13 +34,10 @@ class App extends Component {
     const state = this.state.munchkin.value;
     const screen = screenByState(state);
     return (
-      <div className="App">
-        <header className="App-header">
-          {/* <pre>{JSON.stringify(state, null, 2)}</pre> */}
-          <h1>{screen.headline}</h1>
-          <ButtonList onClick={this.handleClick} buttons={screen.buttons} />
-        </header>
-      </div>
+      <AppContainer>
+        <Headline>{screen.headline}</Headline>
+        <ButtonList onClick={this.handleClick} buttons={screen.buttons} />
+      </AppContainer>
     );
   }
 }
