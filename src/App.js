@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import { ButtonList } from "./ButtonList";
 import { Close } from "./Close";
 import { Headline } from "./Headline";
 import { Icon } from "./Icon";
-import { screenByState } from "./screens";
+import { getAllScreens, screenByState } from "./screens";
 import { munchkinMachine } from "./state-machine";
+import { translations } from "./translations/de-DE";
 import { useMachine } from "./use-machine";
 
 export const AppContainer = styled.div`
@@ -22,7 +23,10 @@ export const AppContainer = styled.div`
 const App = () => {
   const [current, transition] = useMachine(munchkinMachine);
   const state = current.value;
-  const screen = screenByState(state);
+  const translatedScreens = useMemo(() => getAllScreens(translations), [
+    translations
+  ]);
+  const screen = screenByState(state, translatedScreens);
 
   return (
     <AppContainer>
