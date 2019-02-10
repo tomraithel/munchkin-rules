@@ -17,6 +17,10 @@ export const AppContainer = styled.div`
   color: white;
 `;
 
+export const Icon = styled.div`
+  font-size: 3em;
+`;
+
 class App extends Component {
   state = { munchkin: munchkinMachine.initialState };
 
@@ -36,6 +40,7 @@ class App extends Component {
     return (
       <AppContainer>
         <Headline>{screen.headline}</Headline>
+        <Icon>{screen.icon}</Icon>
         <ButtonList onClick={this.handleClick} buttons={screen.buttons} />
       </AppContainer>
     );

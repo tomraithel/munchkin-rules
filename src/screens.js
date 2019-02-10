@@ -41,6 +41,7 @@ const translate = key => translations[key] || key;
 const allScreens = {
   openDoor: {
     headline: translate("openDoor.headline"),
+    icon: "🚪",
     buttons: [
       { text: translate("openDoor.button.monster"), action: "DRAW_MONSTER" },
       {
@@ -52,16 +53,19 @@ const allScreens = {
   },
   applyCurseOrTrap: {
     headline: translate("applyCurseOrTrap.headline"),
+    icon: "😣",
     buttons: [
       { text: translate("applyCurseOrTrap.button"), action: "APPLY_CURSE" }
     ]
   },
   keepOrDrawCard: {
     headline: translate("keepOrDrawCard.headline"),
+    icon: "🃏",
     buttons: [{ text: translate("keepOrDrawCard.button"), action: "DRAW" }]
   },
   readyForTrouble: {
     headline: translate("readyForTrouble.headline"),
+    icon: "❓",
     buttons: [
       {
         text: translate("readyForTrouble.button.fight"),
@@ -75,12 +79,14 @@ const allScreens = {
   },
   takeDungeonCard: {
     headline: translate("takeDungeonCard.headline"),
+    icon: "📤",
     buttons: [
       { text: translate("takeDungeonCard.button"), action: "TAKE_CARD" }
     ]
   },
   mildGift: {
     headline: translate("mildGift.headline"),
+    icon: "❓",
     buttons: [
       {
         text: translate("mildGift.button.moreThanFive"),
@@ -94,6 +100,7 @@ const allScreens = {
   },
   hasLowestLevel: {
     headline: translate("hasLowestLevel.headline"),
+    icon: "🐤",
     buttons: [
       { text: translate("hasLowestLevel.button.yes"), action: "YES" },
       { text: translate("hasLowestLevel.button.no"), action: "NO" }
@@ -101,15 +108,18 @@ const allScreens = {
   },
   discard: {
     headline: translate("discard.headline"),
+    icon: "🗑",
     buttons: [{ text: translate("discard.button"), action: "DROP_CARDS" }]
   },
   charity: {
     headline: translate("charity.headline"),
+    icon: "🎁",
     buttons: [{ text: translate("charity.button"), action: "DISTRIBUTE_CARDS" }]
   },
   fight: {
     fightOrRun: {
       headline: translate("fightOrRun.headline"),
+      icon: "⚔️",
       buttons: [
         { text: translate("fightOrRun.button.defeat"), action: "DEFEAT" },
         { text: translate("fightOrRun.button.run"), action: "RUN" }
@@ -117,6 +127,7 @@ const allScreens = {
     },
     victory: {
       headline: translate("victory.headline"),
+      icon: "🙌",
       buttons: [
         {
           text: translate("victory.button"),
@@ -126,6 +137,7 @@ const allScreens = {
     },
     dice: {
       headline: translate("dice.headline"),
+      icon: "🎲",
       buttons: [
         {
           text: translate("dice.button.lowerThanFive"),
@@ -136,6 +148,7 @@ const allScreens = {
     },
     badThings: {
       headline: translate("badThings.headline"),
+      icon: "☠️",
       buttons: [{ text: translate("badThings.button"), action: "DONE" }]
     },
     end: {
@@ -144,6 +157,7 @@ const allScreens = {
   },
   done: {
     headline: translate("done.headline"),
+    icon: "🏁",
     buttons: [{ text: translate("done.button"), action: "NEXT_PLAYER" }]
   }
 };
