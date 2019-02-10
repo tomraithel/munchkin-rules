@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { ButtonList } from "./ButtonList";
+import { Close } from "./Close";
 import { Headline } from "./Headline";
 import { Icon } from "./Icon";
 import { screenByState } from "./screens";
@@ -35,6 +36,7 @@ class App extends Component {
     const screen = screenByState(state);
     return (
       <AppContainer>
+        <Close onClick={this.handleClick.bind(this, "CANCEL")} />
         <Headline>{screen.headline}</Headline>
         <Icon>{screen.icon}</Icon>
         <ButtonList onClick={this.handleClick} buttons={screen.buttons} />

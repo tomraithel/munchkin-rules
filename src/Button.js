@@ -16,6 +16,16 @@ export const ButtonHost = styled.button`
   border-radius: 0.3rem;
   font-family: "Overlock", cursive;
   font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      to bottom,
+      hsla(2, 65%, 54%, 1),
+      hsla(12, 65%, 54%, 1),
+      hsla(2, 65%, 54%, 1)
+    );
+  }
 `;
 
 export const Button = ({ children, onClick }) => {
