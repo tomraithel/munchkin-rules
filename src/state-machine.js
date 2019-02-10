@@ -88,8 +88,8 @@ export const munchkinConfig = {
     },
     fight: {
       ...fightConfig,
-      on: {
-        "": { target: "mildGift", in: "fight.end" }
+      onDone: {
+        target: "mildGift"
       }
     },
     done: {
