@@ -23,9 +23,8 @@ export const ButtonList = ({ buttons, onClick }) => {
   return (
     <ButtonListHost>
       {buttons.map(({ text, action }) => (
-        <ButtonListItem>
+        <ButtonListItem key={text}>
           <Button
-            key={action}
             onClick={() => {
               onClick(action);
             }}

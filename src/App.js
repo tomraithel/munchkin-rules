@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ButtonList } from "./ButtonList";
 import { Close } from "./Close";
@@ -6,6 +6,7 @@ import { Headline } from "./Headline";
 import { Icon } from "./Icon";
 import { screenByState } from "./screens";
 import { munchkinMachine } from "./state-machine";
+import { useMachine } from "./use-machine";
 
 export const AppContainer = styled.div`
   display: flex;
@@ -18,31 +19,23 @@ export const AppContainer = styled.div`
   color: #333;
 `;
 
-class App extends Component {
-  state = { munchkin: munchkinMachine.initialState };
+const App = () => {
+  const [current, transition] = useMachine(munchkinMachine);
+  const state = current.value;
+  const screen = screenByState(state);
 
-  transition(action) {
-    this.setState({
-      munchkin: munchkinMachine.transition(this.state.munchkin, action)
-    });
-  }
-
-  handleClick = action => {
-    this.transition(action);
-  };
-
-  render() {
-    const state = this.state.munchkin.value;
-    const screen = screenByState(state);
-    return (
-      <AppContainer>
-        <Close onClick={this.handleClick.bind(this, "CANCEL")} />
-        <Headline>{screen.headline}</Headline>
-        <Icon>{screen.icon}</Icon>
-        <ButtonList onClick={this.handleClick} buttons={screen.buttons} />
-      </AppContainer>
-    );
-  }
-}
+  return (
+    <AppContainer>
+      <Close
+        onClick={() => {
+          transition("CANCEL");
+        }}
+      />
+      <Headline>{screen.headline}</Headline>
+      <Icon>{screen.icon}</Icon>
+      <ButtonList onClick={transition} buttons={screen.buttons} />
+    </AppContainer>
+  );
+};
 
 export default App;
