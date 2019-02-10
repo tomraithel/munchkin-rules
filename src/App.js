@@ -18,7 +18,7 @@ export const AppContainer = styled.div`
 `;
 
 export const Icon = styled.div`
-  font-size: 3em;
+  font-size: 5em;
 `;
 
 class App extends Component {

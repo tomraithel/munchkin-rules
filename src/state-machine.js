@@ -39,7 +39,7 @@ export const munchkinConfig = {
       on: {
         DRAW_MONSTER: [{ target: "fight" }],
         DRAW_CURSE_OR_TRAP: [{ target: "applyCurseOrTrap" }],
-        DRAW_OTHER: [{ target: "keepOrDrawCard" }]
+        DRAW_OTHER: [{ target: "keepOrPlayCard" }]
       }
     },
     applyCurseOrTrap: {
@@ -47,10 +47,10 @@ export const munchkinConfig = {
         APPLY_CURSE: { target: "readyForTrouble" }
       }
     },
-    keepOrDrawCard: {
+    keepOrPlayCard: {
       on: {
         KEEP: { target: "readyForTrouble" },
-        DRAW: { target: "readyForTrouble" }
+        PLAY: { target: "readyForTrouble" }
       }
     },
     readyForTrouble: {

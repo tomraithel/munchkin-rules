@@ -5,14 +5,15 @@ const translations = {
   "openDoor.button.other": "alles andere",
   "applyCurseOrTrap.headline": "Fluch / Falle anwenden",
   "applyCurseOrTrap.button": "Fluch angewendet",
-  "keepOrDrawCard.headline": "Karte spielen oder spielen",
-  "keepOrDrawCard.button": "Weiter",
+  "keepOrPlayCard.headline": "Karte behalten oder spielen?",
+  "keepOrPlayCard.button.keep": "Karte behalten",
+  "keepOrPlayCard.button.play": "Karte ausspielen",
   "readyForTrouble.headline": "Auf Ärger aus sein?",
   "readyForTrouble.button.fight": "Gegen Monster Kämpfen",
   "readyForTrouble.button.takeLoot": "Raum Plündern",
   "takeDungeonCard.headline": "Dungeon-Karte nehmen",
   "takeDungeonCard.button": "Karte genommen",
-  "mildGift.headline": "Milda Gabe",
+  "mildGift.headline": "Milde Gabe",
   "mildGift.button.moreThanFive": "Ich habe 6 oder mehr Karten",
   "mildGift.button.lessOrEqualFive": "Ich habe <= 5 Karten",
   "hasLowestLevel.headline": "Bist du der Schwächste?",
@@ -23,7 +24,7 @@ const translations = {
   "charity.headline": "Charity!",
   "charity.button": "Karten wurden aufgeteilt",
   "fightOrRun.headline": "Kampf!",
-  "fightOrRun.button.defeat": "Monster besiegt",
+  "fightOrRun.button.defeat": "Monster wurde besiegt",
   "fightOrRun.button.run": "Fluchtversuch unternehmen",
   "victory.headline": "Sieg",
   "victory.button": "Schatz nehmen und Level aufsteigen",
@@ -58,14 +59,17 @@ const allScreens = {
       { text: translate("applyCurseOrTrap.button"), action: "APPLY_CURSE" }
     ]
   },
-  keepOrDrawCard: {
-    headline: translate("keepOrDrawCard.headline"),
+  keepOrPlayCard: {
+    headline: translate("keepOrPlayCard.headline"),
     icon: "🃏",
-    buttons: [{ text: translate("keepOrDrawCard.button"), action: "DRAW" }]
+    buttons: [
+      { text: translate("keepOrPlayCard.button.keep"), action: "KEEP" },
+      { text: translate("keepOrPlayCard.button.play"), action: "PLAY" }
+    ]
   },
   readyForTrouble: {
     headline: translate("readyForTrouble.headline"),
-    icon: "❓",
+    icon: "🤔",
     buttons: [
       {
         text: translate("readyForTrouble.button.fight"),
@@ -86,7 +90,7 @@ const allScreens = {
   },
   mildGift: {
     headline: translate("mildGift.headline"),
-    icon: "❓",
+    icon: "🖐",
     buttons: [
       {
         text: translate("mildGift.button.moreThanFive"),
@@ -100,7 +104,7 @@ const allScreens = {
   },
   hasLowestLevel: {
     headline: translate("hasLowestLevel.headline"),
-    icon: "🐤",
+    icon: "🐣",
     buttons: [
       { text: translate("hasLowestLevel.button.yes"), action: "YES" },
       { text: translate("hasLowestLevel.button.no"), action: "NO" }
@@ -127,7 +131,7 @@ const allScreens = {
     },
     victory: {
       headline: translate("victory.headline"),
-      icon: "🙌",
+      icon: "🏆",
       buttons: [
         {
           text: translate("victory.button"),
