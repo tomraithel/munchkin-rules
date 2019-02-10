@@ -6,6 +6,8 @@ export const ButtonListHost = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 2rem;
+  max-width: 20rem;
 `;
 
 export const ButtonListItem = styled.div`
