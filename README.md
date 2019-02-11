@@ -6,6 +6,8 @@ This is an interactive rule book for the munchkin card game. Currently only in a
 
 ## Todos
 
-- [ ] Add info block with detailed rules for each step
+- [x] Add info block with detailed rules for each step
 - [ ] Additional translations
 - [ ] Nicer UI :blush:
+- [ ] General rules as overlay / flyout
+- [ ] Add credits for original flowchart authors
