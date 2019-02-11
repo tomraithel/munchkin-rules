@@ -4,6 +4,7 @@ export const getAllScreens = translations => {
   return {
     openDoor: {
       headline: translate("openDoor.headline"),
+      rules: translate("openDoor.rules"),
       icon: "🚪",
       buttons: [
         { text: translate("openDoor.button.monster"), action: "DRAW_MONSTER" },
@@ -16,6 +17,7 @@ export const getAllScreens = translations => {
     },
     applyCurseOrTrap: {
       headline: translate("applyCurseOrTrap.headline"),
+      rules: translate("applyCurseOrTrap.rules"),
       icon: "😣",
       buttons: [
         { text: translate("applyCurseOrTrap.button"), action: "APPLY_CURSE" }
@@ -23,6 +25,7 @@ export const getAllScreens = translations => {
     },
     keepOrPlayCard: {
       headline: translate("keepOrPlayCard.headline"),
+      rules: translate("keepOrPlayCard.rules"),
       icon: "🃏",
       buttons: [
         { text: translate("keepOrPlayCard.button.keep"), action: "KEEP" },
@@ -31,6 +34,7 @@ export const getAllScreens = translations => {
     },
     readyForTrouble: {
       headline: translate("readyForTrouble.headline"),
+      rules: translate("readyForTrouble.rules"),
       icon: "🤔",
       buttons: [
         {
@@ -45,6 +49,7 @@ export const getAllScreens = translations => {
     },
     takeDungeonCard: {
       headline: translate("takeDungeonCard.headline"),
+      rules: translate("takeDungeonCard.rules"),
       icon: "📤",
       buttons: [
         { text: translate("takeDungeonCard.button"), action: "TAKE_CARD" }
@@ -52,6 +57,7 @@ export const getAllScreens = translations => {
     },
     mildGift: {
       headline: translate("mildGift.headline"),
+      rules: translate("mildGift.rules"),
       icon: "🖐",
       buttons: [
         {
@@ -66,6 +72,7 @@ export const getAllScreens = translations => {
     },
     hasLowestLevel: {
       headline: translate("hasLowestLevel.headline"),
+      rules: translate("hasLowestLevel.rules"),
       icon: "🐣",
       buttons: [
         { text: translate("hasLowestLevel.button.yes"), action: "YES" },
@@ -74,11 +81,13 @@ export const getAllScreens = translations => {
     },
     discard: {
       headline: translate("discard.headline"),
+      rules: translate("discard.rules"),
       icon: "🗑",
       buttons: [{ text: translate("discard.button"), action: "DROP_CARDS" }]
     },
     charity: {
       headline: translate("charity.headline"),
+      rules: translate("charity.rules"),
       icon: "🎁",
       buttons: [
         { text: translate("charity.button"), action: "DISTRIBUTE_CARDS" }
@@ -87,14 +96,37 @@ export const getAllScreens = translations => {
     fight: {
       fightOrRun: {
         headline: translate("fightOrRun.headline"),
+        rules: translate("fightOrRun.rules"),
         icon: "⚔️",
         buttons: [
-          { text: translate("fightOrRun.button.defeat"), action: "DEFEAT" },
+          { text: translate("fightOrRun.button.fight"), action: "FIGHT" },
           { text: translate("fightOrRun.button.run"), action: "RUN" }
+        ]
+      },
+      wait: {
+        headline: translate("wait.headline"),
+        rules: translate("wait.rules"),
+        icon: "⏳",
+        buttons: []
+      },
+      recheckConditions: {
+        headline: translate("recheckConditions.headline"),
+        rules: translate("recheckConditions.rules"),
+        icon: "😯",
+        buttons: [
+          {
+            text: translate("recheckConditions.button.somethingChanged"),
+            action: "SOMETHING_CHANGED"
+          },
+          {
+            text: translate("recheckConditions.button.nothingChanged"),
+            action: "NOTHING_CHANGED"
+          }
         ]
       },
       victory: {
         headline: translate("victory.headline"),
+        rules: translate("victory.rules"),
         icon: "🏆",
         buttons: [
           {
@@ -105,6 +137,7 @@ export const getAllScreens = translations => {
       },
       dice: {
         headline: translate("dice.headline"),
+        rules: translate("dice.rules"),
         icon: "🎲",
         buttons: [
           {
@@ -116,6 +149,7 @@ export const getAllScreens = translations => {
       },
       badThings: {
         headline: translate("badThings.headline"),
+        rules: translate("badThings.rules"),
         icon: "☠️",
         buttons: [{ text: translate("badThings.button"), action: "DONE" }]
       },
@@ -125,6 +159,7 @@ export const getAllScreens = translations => {
     },
     done: {
       headline: translate("done.headline"),
+      rules: translate("done.rules"),
       icon: "🏁",
       buttons: [{ text: translate("done.button"), action: "NEXT_PLAYER" }]
     }

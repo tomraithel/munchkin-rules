@@ -5,6 +5,7 @@ import { Close } from "./Close";
 import { Footnote } from "./Footnote";
 import { Headline } from "./Headline";
 import { Icon } from "./Icon";
+import { Rules } from "./Rules";
 import { getAllScreens, screenByState } from "./screens";
 import { munchkinMachine } from "./state-machine";
 import { translations } from "./translations/de-DE";
@@ -38,6 +39,7 @@ const App = () => {
       />
       <Headline>{screen.headline}</Headline>
       <Icon>{screen.icon}</Icon>
+      {screen.rules && <Rules>{screen.rules}</Rules>}
       <ButtonList onClick={transition} buttons={screen.buttons} />
       <Footnote href="https://github.com/tomraithel/munchkin-rules">
         View on GitHub

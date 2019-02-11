@@ -1,12 +1,23 @@
 import { Machine } from "xstate";
 
-export const fightConfig = {
+const fightConfig = {
   initial: "fightOrRun",
   states: {
     fightOrRun: {
       on: {
-        DEFEAT: { target: "victory" },
+        FIGHT: { target: "wait" },
         RUN: { target: "dice" }
+      }
+    },
+    wait: {
+      after: {
+        2600: { target: "recheckConditions" }
+      }
+    },
+    recheckConditions: {
+      on: {
+        SOMETHING_CHANGED: { target: "fightOrRun" },
+        NOTHING_CHANGED: { target: "victory" }
       }
     },
     victory: {
@@ -31,7 +42,7 @@ export const fightConfig = {
   }
 };
 
-export const munchkinConfig = {
+const munchkinConfig = {
   id: "munchkin",
   initial: "openDoor",
   states: {
