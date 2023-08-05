@@ -8,7 +8,7 @@ import { Icon } from "./Icon";
 import { Rules } from "./Rules";
 import { getAllScreens, screenByState } from "./screens";
 import { munchkinMachine } from "./state-machine";
-import { translations } from "./translations/de-DE";
+import { translations } from "./translations/ua-UA";
 import { useMachine } from "./use-machine";
 
 export const AppContainer = styled.div`
